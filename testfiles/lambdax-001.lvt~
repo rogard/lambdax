@@ -1,0 +1,15 @@
+\input regression-test.tex
+\documentclass{article}
+\usepackage[T1]{fontenc}
+\usepackage{lambdax}
+\begin{document}
+\ExplSyntaxOn
+\START
+\box_new:N \l_tmp_box
+\START
+\hbox_set:Nn \l_tmp_box{\LambdaX{(#1)}{x}}
+\box_use:N \l_tmp_box
+\box_show:N \l_tmp_box
+%\END
+\ExplSyntaxOff
+\end{document}

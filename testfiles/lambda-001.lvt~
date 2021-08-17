@@ -1,0 +1,16 @@
+\input regression-test.tex
+\documentclass{article}
+\usepackage[T1]{fontenc}
+\usepackage{lambda-etcetera}
+\begin{document}
+\ExplSyntaxOn
+\START
+  \cs_new:Nn \__erw_foo:nn{(#1)[#2]}
+  \CommandBind{\Foo}{O{y}}{\__erw_foo:nn{x}}{{#1}}
+  \box_new:N \l_tmp_box
+  \hbox_set:Nn \l_tmp_box {\Foo[w];\ \Foo}
+  \box_use:N \l_tmp_box
+  \box_show:N \l_tmp_box
+%\END
+\ExplSyntaxOff
+\end{document}

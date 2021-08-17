@@ -1,0 +1,16 @@
+\input regression-test.tex
+\documentclass{article}
+\usepackage{lambdax}
+\begin{document}
+\ExplSyntaxOn
+\START
+\NewDocumentCommand
+\Foo{mm}{#1.#2}
+\box_new:N\l_tmp_box
+\hbox_set:Nn \l_tmp_box{\LambdaX[O{w}m]{\Foo{#1}{#2}}[x]{y}}
+\box_use:N \l_tmp_box
+\hbox_set:Nn \l_tmp_box{\LambdaX[O{w}m]{\Foo{#1}{#2}}{x}}
+\box_use:N \l_tmp_box
+%\END
+\ExplSyntaxOff
+\end{document}
