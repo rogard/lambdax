@@ -4,4 +4,6 @@ module = "lambdax"
 
 checksuppfiles = {"*.sty"}
 
+docfiles = {"lambdax.pdf"}
+
 typesetfiles  = {}

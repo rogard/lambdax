@@ -13,11 +13,11 @@
 %% 
  \NeedsTeXFormat{LaTeX2e}[2021-06-01]
  \RequirePackage{expl3, xparse, xtemplate, l3keys2e}[2021-06-01]
- \RequirePackage{lex}[2021-08-03]
+ \RequirePackage{keyparse}[2021-08-18]
  \ProvidesExplPackage
  {lambdax}                                                  % Package name
- {2021-08-03}                                               % Release date
- {1.0}                                                      % Release version
+ {2021-08-18}                                               % Release date
+ {1.1}                                                      % Release version
  {lambdax --- Lambda expression                         }   % Description
 \ExplSyntaxOn
 \cs_generate_variant:Nn\tl_count:n{e}
@@ -71,7 +71,7 @@
 \__lambdax_msg_name:n{msg_\g__lambdax_opt_msg_tl{}:#1}
 \cs_new:Nn\__lambdax_placeholder:n{#### #1}
 \cs_generate_variant:Nn\__lambdax_placeholder:n{o,e}
-\cs_new:Nn\__lambdax_argspec:n{\lex_eval:nn{argspec}{#1}}
+\cs_new:Nn\__lambdax_argspec:n{\keyparse_eval:nn{argspec}{#1}}
 \cs_new:Nn\__lambdax_argspec_count:n{\tl_count:e{\__lambdax_argspec:n{#1}}}
 \cs_new:Nn\__lambdax_chain_position:n{\int_eval:e{\__lambdax_argspec_count:n{#1}+1}}
 \cs_new:Nn\__lambdax_chain_placeholder:n
